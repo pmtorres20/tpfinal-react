@@ -5,13 +5,13 @@ import ContactScreen from './Screens/ContactScreen/ContactScreen'
 import ContactDetailScreen from './Screens/ContactDetailScreen/ContactDetailScreen'
 import { getContactList } from './services/contactService'
 import { getMessagesByContactId } from './services/messagesService'
-import './app.css'
+
 function App() {
 	
 	
 
 	return (
-		<div className='app'>
+		<div>
 			
 			<Routes>
 				
@@ -20,7 +20,7 @@ function App() {
 					element={<HomeScreen/>} 
 				/>
 				<Route 
-					path='/contacts'
+					path='/'
 					element={<ContactScreen/>}
 				/>
 				<Route
