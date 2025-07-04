@@ -5,7 +5,7 @@ import ContactScreen from './Screens/ContactScreen/ContactScreen'
 import ContactDetailScreen from './Screens/ContactDetailScreen/ContactDetailScreen'
 import { getContactList } from './services/contactService'
 import { getMessagesByContactId } from './services/messagesService'
-import './App.css'
+import './app.css'
 function App() {
 	
 	
