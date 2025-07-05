@@ -1,0 +1,11 @@
+.chat-container{
+    background-color: var(--color-background);
+    min-height: 450px;
+    margin: 5px;
+    width: 100%;
+    font-family: sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 1px #9e83a3da;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,35 @@
+.NewMessage_container{
+    display: flex;
+    padding: 2px 6px;
+    width: 100%;
+}
+
+.NewMessage-form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 0px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 3px 1px #9e83a3da;
+}
+
+.NewMessage_button-send{
+    font-size: 1.3rem;
+    border: none;
+    background-color: #b7eeb7c7;
+    padding: 4px 16px;
+}
+
+.NewMessage_input{
+    width: 100%;
+    display: flex;
+    border: none;
+    font-size: 1rem;
+    padding: 4px 8px;
+}
+
+.NewMessage_input:focus{
+    border: none;
+    outline: none;
+}

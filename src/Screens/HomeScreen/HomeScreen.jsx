@@ -6,12 +6,13 @@ import Swal from 'sweetalert2'
 import { useParams } from 'react-router';
 import { MessagesContext } from '../../Context/MessagesContext';
 import LoaderSpinner from '../../Component/LoaderSpinner/LoaderSpinner';
+import './HomeScreen.css'
 
 export default function HomeScreen() {
 
     //Capturamos el valor de id de contacto de la URL usando la funcion useParams
-    const {contact_id} = useParams()
-    const {loadMessages, isMessagesLoading} = useContext(MessagesContext)
+    const { contact_id } = useParams()
+    const { loadMessages, isMessagesLoading } = useContext(MessagesContext)
 
     //const {contact_id} = useParams()
     //La funcion console.log se ejecute cada vez que se cambie un parametro de busqueda
@@ -27,28 +28,30 @@ export default function HomeScreen() {
         [contact_id]
     )
 
-    if(isMessagesLoading){
-        return <LoaderSpinner/>
+    if (isMessagesLoading) {
+        return <LoaderSpinner />
     }
     const handleClickAlertButton = () => {
-		Swal.fire({
-			title: 'Error!',
-			text: 'Do you want to continue',
-			icon: 'error',
-			confirmButtonText: 'Cool'
-		})
-	}
+        Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        })
+    }
 
     return (
-        <div>
-            <h3>
-                Lets go for a <IoIosBody />?
-            </h3>
-            <button onClick={handleClickAlertButton}>alerta bonita</button>
-            <Chat />
-            <NewMessageForm/>
+        <div className='chatScreen_page'>
+            <div className='chatScreen_container'>
+                <h3>
+                    Lets go for a <IoIosBody />?
+                </h3>
+                <button onClick={handleClickAlertButton}>alerta bonita</button>
+                <Chat />
+                <NewMessageForm />
+            </div>
         </div>
-        
+
     )
 }
 

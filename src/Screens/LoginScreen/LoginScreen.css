@@ -1,3 +1,10 @@
+.login-container{
+width: 100%;
+display: flex;
+justify-content: center;
+padding-top: 20px;
+
+}
 .login-form{
     background-color: var(--color-background);
     color: var(--color-text);
@@ -6,9 +13,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 25px;
     padding: 20px 20px;
-
+    width: 500px;
 }
 
 .h2-form{
@@ -33,7 +40,7 @@ font-family:sans-serif;
 }
 
 .login-button{
-    background-color: var(--color-background);
+    background-color: var(--color-secondary);
     color: var(--color-text);
     border: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);

@@ -1,0 +1,47 @@
+.message-info-box{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    max-width: 150px;
+    align-items: center;
+    margin: 3px;
+    align-self: flex-end;
+}
+.text-message{
+    color: var(--color-text);
+    background-color: var(--color-background);
+    border-radius: 6px;
+    padding: 3px 5px;
+}
+
+.date-time-mesagge{
+    font-size: 0.8rem;
+    color: var(--color-text);
+}
+
+.chat-dialog{
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    margin: 14px 6px 4px 20px;
+}
+
+.chat-dialog__my-message{
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    margin: 10px 20px 4px 4px;
+    max-width: 300px;
+}
+
+.button-delete-message{
+    border: none;
+    background-color: #f8545465;
+    color: var(--color-text);
+    border-radius: 4px;
+    padding: 2px 4px;
+
+}
+.button-delete-message:active{
+    background-color: #f85454a2;
+}

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Importamos useNavigate desde react-router
 import React from "react";
 import "./LoginScreen.css";
-import { CiLogin } from "react-icons/ci";
+import { GrLogin } from "react-icons/gr";
 import { useTheme } from "../../Context/ThemeContext";
 import { Themebtn } from "../../Component/Theme/ThemeButton";
 
@@ -22,25 +22,27 @@ function LoginScreen() {
     }
 
     return (
-        <form onSubmit={handleSubmit}
-            className="login-form">
-            <h2
-                className="h2-form">Iniciar Sesión</h2>
-            <input
-                className="login-input"
-                type="text"
-                placeholder="Nombre de usuario"
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
-                required />
-            <button
-                className="login-button"
-                type="submit">
-                <CiLogin />
-            </button>
-            <Themebtn>
-            </Themebtn>
-        </form>
+        <div className="login-container">
+            <form onSubmit={handleSubmit}
+                className="login-form">
+                <h2
+                    className="h2-form">Iniciar Sesión</h2>
+                <input
+                    className="login-input"
+                    type="text"
+                    placeholder="Nombre de usuario"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    required />
+                <button
+                    className="login-button"
+                    type="submit">
+                    <GrLogin />
+                </button>
+                <Themebtn>
+                </Themebtn>
+            </form>
+        </div>
     );
 }
 export default LoginScreen;

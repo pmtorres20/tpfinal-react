@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { MessagesContext } from '../../Context/MessagesContext'
+import './Message.css'
 
 export default function Message({ emisor, hora, id, texto, status}) {
     //Mostrar por consola el dato guardado en el contexto de mensajes
@@ -18,12 +19,16 @@ export default function Message({ emisor, hora, id, texto, status}) {
     }
     return (
         <div className={classNames.message}>
-            <span> {texto} </span>
-            <div>
-                <span>{hora}</span>
+            <span className='text-message'> {texto} </span>
+            <div className='message-info-box'>
+                <span className='date-time-mesagge'>{hora}</span>
                 <span >✔✔</span>
                 {/* Nos interesa pasar una funcion anonima cuando queremos pasarle un parametro a x funcion */}
-                <button onClick={() => {handleEliminarMensaje(id)}} >Eliminar</button>
+                <button 
+                    onClick={() => {handleEliminarMensaje(id)}} 
+                    className='button-delete-message'>
+                        Eliminar
+                </button>
             </div>
         </div>
     )

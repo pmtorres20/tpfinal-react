@@ -1,13 +1,17 @@
 :root {
     --color-primary: #21192c;
-    --color-secondary: #3e1277;
+    --color-secondary: #795c9ede;
     --color-text: #2b2a2e;
     --color-background: #b88cf13d;
 }
 
 [data-theme='dark'] {
     --color-primary: #3e1277;
-    --color-secondary: #9157dde3;
+    --color-secondary: #2c2436e3;
     --color-text: #eee;
     --color-background: #171120f6;
+}
+
+body{
+    background-color: var(--color-background);
 }
