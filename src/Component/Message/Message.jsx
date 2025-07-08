@@ -21,8 +21,8 @@ export default function Message({ emisor, hora, id, texto, status}) {
         <div className={classNames.message}>
             <span className='text-message'> {texto} </span>
             <div className='message-info-box'>
-                <span className='date-time-mesagge'>{hora}</span>
-                <span >✔✔</span>
+                <span className='date-time-message'>{hora}</span>
+                <span className='double-check_message'>✔✔</span>
                 {/* Nos interesa pasar una funcion anonima cuando queremos pasarle un parametro a x funcion */}
                 <button 
                     onClick={() => {handleEliminarMensaje(id)}} 

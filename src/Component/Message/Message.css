@@ -14,11 +14,13 @@
     padding: 3px 5px;
 }
 
-.date-time-mesagge{
+.date-time-message{
     font-size: 0.8rem;
     color: var(--color-text);
 }
-
+.double-check_message{
+    color: var(--color-text);
+}
 .chat-dialog{
     display: flex;
     flex-direction: column;

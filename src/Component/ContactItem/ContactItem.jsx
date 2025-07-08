@@ -1,19 +1,18 @@
 import React from "react"
 import { Link} from "react-router"
+import './ContactItem.css'
 
 const ContactItem = ({name, id, last_time_connected, img, last_message, unread_messages}) => {
     
     return (
-        <Link to={`/contacts/${id}/messages`}>
-            {/* <a href="/home"> */}{/* el elemento <a></a> Recarga la pagina */}
-            <img src={img} alt={`${name} image profile`} />
-            <h3>{name}</h3>
-            <div>
+        <Link to={`/contacts/${id}/messages`} className="contact-item">
+            <img src={img} alt={`${name} image profile`} className="img__contact-item" />
+            <h3 className="h3__contact-item">{name}</h3>
+            <div className="last-message__contact-item">
                 {last_message.text}
             </div>
-            <span>{unread_messages}</span>
-            <span>Ultima conexion: {last_time_connected}</span>
-            <hr/>
+            <span className="unread-mensagge_span">{unread_messages}</span>
+            <span className="last-time_contact-item">Ultima conexion: {last_time_connected}</span>
         </Link>
         
         

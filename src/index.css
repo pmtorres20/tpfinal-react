@@ -1,6 +1,6 @@
 :root {
     --color-primary: #21192c;
-    --color-secondary: #795c9ede;
+    --color-secondary: rgba(123, 88, 168, 0.637);
     --color-text: #2b2a2e;
     --color-background: #b88cf13d;
 }
@@ -14,4 +14,11 @@
 
 body{
     background-color: var(--color-background);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
