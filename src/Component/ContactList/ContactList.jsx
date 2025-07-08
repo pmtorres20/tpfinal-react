@@ -4,13 +4,21 @@ import { ContactContext } from "../../Context/ContactContext"
 import LoaderSpinner from "../LoaderSpinner/LoaderSpinner"
 import './ContactList.css'
 
-const ContactsList = () => {
-    const {contacts, isLoadingContacts} = useContext(ContactContext)
-    if(isLoadingContacts){
+const ContactsList = ({ contacts }) => {
+    const { isLoadingContacts } = useContext(ContactContext)
+    
+    if (isLoadingContacts) {
+        return <LoaderSpinner/>
+    }
+    
+    if (!contacts || contacts.length === 0) {
         return (
-            <LoaderSpinner/>
+            <div className="no-contacts-message">
+                <p>No se encontraron contactos</p>
+            </div>
         )
     }
+    
     return (
         <div className="contacts-list">
             {

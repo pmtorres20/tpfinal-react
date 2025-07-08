@@ -10,6 +10,8 @@
     overflow-x: hidden;
     box-sizing: border-box;
     scroll-behavior: smooth; /* Scroll suave */
+    /*scrollbar-color: var(--color-primary) transparent;*/
+    scrollbar-width: none;
     padding-top: 10px;
 }
 

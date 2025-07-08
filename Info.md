@@ -24,6 +24,6 @@
 - Layout flexible con Flexbox y diseño adaptado a distintos tamaños de pantalla. (Rsponsive Design)
 
 🚀 Objetivo del proyecto
-El objetivo fue aplicar conceptos clave de React y diseño web para construir una SPA (Single Page Application) funcional, modular y escalable. También me enfoqué en la experiencia de usuario, la organización del código y el uso de buenas prácticas como los Conventional Commits.
+El objetivo fue aplicar conceptos clave de React y diseño web para construir una SPA (Single Page Application) funcional, modular y escalable. También me enfoqué en la experiencia de usuario, la organización del código, el uso de buenas prácticas como los Conventional Commits y el control de versiones con Git y GitHub, y el despliegue profesional mediante Vercel.
 
 
