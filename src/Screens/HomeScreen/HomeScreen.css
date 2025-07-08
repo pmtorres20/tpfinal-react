@@ -5,7 +5,8 @@
     max-width: 450px;
     min-width: 450px;
     text-align: center;
-    border-top: 1px solid var(--color-secondary);
+    height: 100vh;
+    padding: 0; /* Removemos padding para que el header ocupe todo el ancho */
 }
 
 @media screen and (max-width: 450px) {
@@ -13,14 +14,67 @@
         min-width: 280px;
     }
     
+    .chatScreen_header {
+        padding: 12px 15px;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .back-to-contacts-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .chatScreen_title {
+        font-size: 1.2rem;
+        margin: 0 8px;
+    }
 }
 .chatScreen_page{
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+}
+
+.chatScreen_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--card);
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.back-to-contacts-btn {
+    color: var(--color-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    background-color: transparent;
+}
+
+.back-to-contacts-btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: scale(1.1);
 }
 
 .chatScreen_title{
     color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+    margin: 0 10px;
+}
+.chatScreen_title:hover{
+    color: var(--color-primary);
 }

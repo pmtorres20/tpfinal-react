@@ -6,19 +6,22 @@ const ContactItem = ({name, id, last_time_connected, img, last_message, unread_m
     
     return (
         <Link to={`/contacts/${id}/messages`} className="contact-item">
-            <img src={img} alt={`${name} image profile`} className="img__contact-item" />
-            <h3 className="h3__contact-item">{name}</h3>
+            <div className="contact-info">
+                <img src={img} alt={`${name} image profile`} className="img__contact-item" />
+                <h3 className="h3__contact-item">{name}</h3>
+            </div>
             <div className="last-message__contact-item">
                 {last_message.text}
             </div>
-            <span className="unread-mensagge_span">{unread_messages}</span>
-            <div className="last-time_contact-item">
-                <span>Ultima conexion:</span>
-                <span>{last_time_connected}</span>
+            <div className="contact-meta">
+                <div className="last-time_contact-item">
+                    {last_time_connected}
+                </div>
+                {unread_messages > 0 && (
+                    <span className="unread-mensagge_span">{unread_messages}</span>
+                )}
             </div>
         </Link>
-        
-        
     )
 }
 

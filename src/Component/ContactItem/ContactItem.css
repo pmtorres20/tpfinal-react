@@ -3,71 +3,171 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
-    padding: 10px;
+    gap: 15px;
+    padding: 20px 30px;
     text-decoration: none;
     color: var(--color-text);
-    font-family: sans-serif;
-    border-bottom: 1px solid var(--color-primary);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--card);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
 }
+
 .contact-item:hover {
     background-color: var(--color-background);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 .contact-item:active {
-    background-color: var(--color-secondary);
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de información del contacto */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
 }
 
 .img__contact-item {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover .img__contact-item {
+    transform: scale(1.05);
+    border-color: var(--color-secondary);
 }
 
 .h3__contact-item {
-    font-size: 1.2rem;
-    
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text);
 }
-@media screen and (max-width: 400px) {
-    .h3__contact-item {
-        font-size: 0.9rem;
-    }
-    .img__contact-item {
-        width: 30px;
-        height: 30px;
-    }
-    .contact-item {
-        padding: 2px;
-        gap: 8px;
-    }
-    .last-message__contact-item {
-        font-size: 0.8rem;
-    }
-    .unread-mensagge_span {
-        font-size: 0.8rem;
-    }
-    .last-time_contact-item span{
-        font-size: 0.6rem;
-    }
-}
+
 .last-message__contact-item {
     flex: 1;
     display: flex;
-    text-align: center;
     justify-content: center;
-    border-right: 1px solid var(--color-primary);
-
+    text-align: center;
+    padding: 0 20px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    opacity: 0.7;
 }
 
-.unread-mensagge_span{
-    flex: 0;
-    font-weight: bold;
-}
-
-.last-time_contact-item{
-    font-size: 0.8rem;
-    color: gray;
+.contact-meta {
     display: flex;
     flex-direction: column;
-    max-width: min-content;
+    align-items: flex-end;
+    gap: 8px;
+    min-width: fit-content;
+}
+
+.last-time_contact-item {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    font-weight: 500;
+}
+
+.unread-mensagge_span {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    border-radius: 20px;
+    padding: 4px 12px;
     font-size: 0.8rem;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación para mensajes no leídos */
+.unread-mensagge_span {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@media screen and (max-width: 400px) {
+    .contact-item {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .contact-info {
+        gap: 10px;
+    }
+    
+    .h3__contact-item {
+        font-size: 1rem;
+    }
+    
+    .img__contact-item {
+        width: 45px;
+        height: 45px;
+        border-width: 2px;
+    }
+    
+    .last-message__contact-item {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+    
+    .unread-mensagge_span {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+    
+    .last-time_contact-item {
+        font-size: 0.75rem;
+    }
+}
+
+.last-message__contact-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+.unread-mensagge_span {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.last-time_contact-item {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    font-weight: 500;
 }

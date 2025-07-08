@@ -28,7 +28,7 @@ function App() {
 						element={<ContactScreen/>}
 					/>
 					<Route
-						path='/contact-detail'
+						path='/contact-detail/:contact_id'
 						element={<ContactDetailScreen/>}
 					/>
 				</Routes>

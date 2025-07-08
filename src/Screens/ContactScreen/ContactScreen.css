@@ -1,25 +1,87 @@
 .contactScreen_page{
-    border: 1px solid var(--color-secondary);
-    padding: 20px;
     background-color: var(--color-background);
-    border-radius: 8px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    min-width: 1200px;
-    margin:40px;
+    align-items: flex-start;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
 }
+
+/* Container para centrar y dar estilo moderno */
+.contactScreen_container {
+    background-color: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    min-height: 600px;
+}
+
+/* Header del ContactScreen */
+.contactScreen_header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.contactScreen_header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: var(--card);
+    border-radius: 20px 20px 0 0;
+}
+
+.contactScreen_title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contactScreen_subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 8px;
+    font-weight: 300;
+}
+
 @media screen and (max-width: 1230px) {
     .contactScreen_page{
-        min-width: 700px;
-        margin: 20px;
+        padding: 15px;
     }
     
+    .contactScreen_container {
+        max-width: 700px;
+    }
 }
+
 @media screen and (max-width: 760px) {
     .contactScreen_page{
-        min-width: 0px;
-        margin: 8px;
-        padding: 4px;
+        padding: 10px;
     }
     
+    .contactScreen_container {
+        border-radius: 12px;
+        min-height: 500px;
+    }
+    
+    .contactScreen_header {
+        padding: 20px;
+    }
+    
+    .contactScreen_title {
+        font-size: 1.6rem;
+    }
+    
+    .contactScreen_subtitle {
+        font-size: 0.9rem;
+    }
 }

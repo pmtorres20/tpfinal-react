@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import Chat from '../../Component/Chat/Chat'
 import NewMessageForm from '../../Component/NewMessageForm/NewMessageForm'
-import { HiChatBubbleLeftRight } from "react-icons/hi2";
+import { HiChatBubbleLeftRight, HiArrowLeft } from "react-icons/hi2";
 import Swal from 'sweetalert2'
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router';
 import { MessagesContext } from '../../Context/MessagesContext';
 import LoaderSpinner from '../../Component/LoaderSpinner/LoaderSpinner';
 import './HomeScreen.css'
@@ -46,9 +46,14 @@ export default function HomeScreen() {
     return (
         <div className='chatScreen_page'>
             <div className='chatScreen_container'>
-                <h3 className='chatScreen_title'>
-                    {nombre_contacto}
-                </h3>
+                <div className='chatScreen_header'>
+                    <Link to="/contacts" className='back-to-contacts-btn'>
+                        <HiArrowLeft size={24} />
+                    </Link>
+                    <Link to={`/contact-detail/${contact_id}`} className='chatScreen_title'>
+                        {nombre_contacto}
+                    </Link>
+                </div>
                 {/*<button onClick={handleClickAlertButton}>Info</button>*/}
                 <Chat />
                 <NewMessageForm />
