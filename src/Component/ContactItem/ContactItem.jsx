@@ -12,7 +12,10 @@ const ContactItem = ({name, id, last_time_connected, img, last_message, unread_m
                 {last_message.text}
             </div>
             <span className="unread-mensagge_span">{unread_messages}</span>
-            <span className="last-time_contact-item">Ultima conexion: {last_time_connected}</span>
+            <div className="last-time_contact-item">
+                <span>Ultima conexion:</span>
+                <span>{last_time_connected}</span>
+            </div>
         </Link>
         
         

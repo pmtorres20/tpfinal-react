@@ -11,13 +11,14 @@
     gap: 0px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 3px 1px #9e83a3da;
+    box-shadow: 0 0 2px 1px var(--color-primary);
 }
 
 .NewMessage_button-send{
     font-size: 1.3rem;
     border: none;
-    background-color: #b7eeb7c7;
+    color: var(--color-text);
+    background-color: var(--color-primary);
     padding: 4px 16px;
 }
 

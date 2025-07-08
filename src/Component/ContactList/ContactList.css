@@ -2,6 +2,17 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
+    margin: 10px;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .contacts-list {
+        padding: 5px;
+        margin: 5px;
+        gap: 5px;
+    }
+    
 }

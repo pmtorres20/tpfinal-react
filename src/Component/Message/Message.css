@@ -9,7 +9,7 @@
 }
 .text-message{
     color: var(--color-text);
-    background-color: var(--color-background);
+    background-color: var(--card);
     border-radius: 6px;
     padding: 3px 5px;
 }

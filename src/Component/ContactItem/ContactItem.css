@@ -8,7 +8,7 @@
     text-decoration: none;
     color: var(--color-text);
     font-family: sans-serif;
-    border-bottom: 1px solid rgba(64, 22, 92, 0.664);
+    border-bottom: 1px solid var(--color-primary);
 }
 .contact-item:hover {
     background-color: var(--color-background);
@@ -25,16 +25,37 @@
 
 .h3__contact-item {
     font-size: 1.2rem;
-    align-self: flex-start;
+    
 }
-
+@media screen and (max-width: 400px) {
+    .h3__contact-item {
+        font-size: 0.9rem;
+    }
+    .img__contact-item {
+        width: 30px;
+        height: 30px;
+    }
+    .contact-item {
+        padding: 2px;
+        gap: 8px;
+    }
+    .last-message__contact-item {
+        font-size: 0.8rem;
+    }
+    .unread-mensagge_span {
+        font-size: 0.8rem;
+    }
+    .last-time_contact-item span{
+        font-size: 0.6rem;
+    }
+}
 .last-message__contact-item {
-    overflow: hidden;
-    text-overflow: ellipsis;
     flex: 1;
     display: flex;
     text-align: center;
     justify-content: center;
+    border-right: 1px solid var(--color-primary);
+
 }
 
 .unread-mensagge_span{
@@ -45,4 +66,8 @@
 .last-time_contact-item{
     font-size: 0.8rem;
     color: gray;
+    display: flex;
+    flex-direction: column;
+    max-width: min-content;
+    font-size: 0.8rem;
 }
