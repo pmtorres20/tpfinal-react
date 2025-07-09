@@ -8,6 +8,7 @@ import { MessagesContext } from '../../Context/MessagesContext';
 import LoaderSpinner from '../../Component/LoaderSpinner/LoaderSpinner';
 import './HomeScreen.css'
 import { getContactList } from '../../services/contactService';
+import Header from '../../Component/Header/Header';
 
 export default function HomeScreen() {
 
@@ -45,15 +46,11 @@ export default function HomeScreen() {
 
     return (
         <div className='chatScreen_page'>
+            <Header 
+                title={nombre_contacto}
+                titleLink={`/contact-detail/${contact_id}`}
+            />
             <div className='chatScreen_container'>
-                <div className='chatScreen_header'>
-                    <Link to="/contacts" className='back-to-contacts-btn'>
-                        <HiArrowLeft size={24} />
-                    </Link>
-                    <Link to={`/contact-detail/${contact_id}`} className='chatScreen_title'>
-                        {nombre_contacto}
-                    </Link>
-                </div>
                 {/*<button onClick={handleClickAlertButton}>Info</button>*/}
                 <Chat />
                 <NewMessageForm />

@@ -48,7 +48,7 @@ const mook_data = {
             img: "https://resizing.flixster.com/HyNT-XNfqIkd0KbeP0zrKyDQQro=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p90510_p_v10_aa.jpg",
             last_message: {
                 id: 1,
-                text: 'Que tal, tanto tiempo!'
+                text: 'Buenas, estas aprendiendo React? verdad?'
             },
             unread_messages: 20,
             messages: [
@@ -59,6 +59,40 @@ const mook_data = {
                     texto: 'Eso que significa 🤓?',
                     status: 'no-visto'
                 },
+            ]
+        },
+        {
+            id: 4,
+            name: 'jose',
+            last_time_connected: '20:59',
+            img: "https://resizing.flixster.com/HyNT-XNfqIkd0KbeP0zrKyDQQro=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p90510_p_v10_aa.jpg",
+            last_message: {
+                id: 1,
+                text: 'Hola amigo, como estas?'
+            },
+            unread_messages: 2,
+            messages: [
+                {
+                    emisor: 'YO',
+                    hora: '23:12',
+                    id: 2,
+                    texto: 'Estudiaste? 🤓?',
+                    status: 'visto'
+                },
+                {
+                    emisor: 'USUARIO',
+                    hora: '23:13',
+                    id: 3,
+                    texto: 'Si, hoy aprendi estados',
+                    status: 'visto'
+                },
+                {
+                    emisor: 'USUARIO',
+                    hora: '23:23',
+                    id: 4,
+                    texto: 'y tu? que haces?',
+                    status: 'no-visto'
+                }
             ]
         }
     ]

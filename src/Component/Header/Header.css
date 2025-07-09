@@ -1,0 +1,167 @@
+/* Header reutilizable */
+.header_container {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.header_logo {
+    flex: 0 0 auto;
+}
+
+.header_center {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.header_title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 12px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header_title:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.header_title:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header_subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 8px 0 0 0;
+    font-weight: 300;
+}
+
+.header_actions {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Mejorar el estilo del botón de tema en el header */
+.header_actions .theme-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.header_actions .theme-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header_actions .theme-btn:active {
+    transform: scale(0.95);
+}
+
+/* Estilos para el título clickeable del header */
+.header_title_link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.header_title_link:hover .header_title {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.header_title_link:active .header_title {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* Responsive design */
+@media screen and (max-width: 760px) {
+    .header_container {
+        padding: 15px 20px;
+    }
+    
+    .header_content {
+        gap: 15px;
+    }
+    
+    .header_title {
+        font-size: 1.6rem;
+    }
+    
+    .header_subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .header_actions .theme-btn {
+        padding: 10px 12px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header_container {
+        padding: 12px 15px;
+    }
+    
+    .header_content {
+        gap: 10px;
+    }
+    
+    .header_title {
+        font-size: 1.4rem;
+    }
+    
+    .header_subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .header_actions .theme-btn {
+        padding: 8px 10px;
+        font-size: 1rem;
+    }
+}

@@ -15,16 +15,13 @@ function App() {
 	return (
 			<div>
 				<Routes>
-					<Route
-						path='/' /* Configuramos la ruta de login */
-						element={<LoginScreen />} /* Renderizamos el componente LoginScreen */
-						/>
+					
 					<Route
 						path='/contacts/:contact_id/messages' /* Configuramos el prametro de busqueda :contact_id */
 						element={<HomeScreen/>} 
 					/>
 					<Route 
-						path='/contacts'
+						path='/'
 						element={<ContactScreen/>}
 					/>
 					<Route

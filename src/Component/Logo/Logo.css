@@ -1,0 +1,68 @@
+/* Componente Logo clickeable */
+.logo_link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.logo_link:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logo_link:active {
+    transform: scale(0.95);
+}
+
+.logo_image {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+.logo_link:hover .logo_image {
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Responsive design */
+@media screen and (max-width: 760px) {
+    .logo_image {
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .logo_image {
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .logo_image {
+        height: 25px;
+    }
+}
+
+.h1_logo{
+    color: var(--color-secondary);
+    filter: opacity(0.8);
+    font-size: 1rem;
+    margin-left: 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+/* Responsive design for the logo text */
+@media screen and (max-width: 400px) {
+    .h1_logo {
+        font-size: 0.8rem;
+    }
+}
+
+.h1_logo:hover {
+    color: var(--color-primary);
+    filter: opacity(1);
+}

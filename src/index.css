@@ -1,23 +1,21 @@
 :root {
-    --color-primary: #4a6cf7;
-    --color-secondary: #a78bfa;
-    --color-text: #1e2a4a;
-    --card: #ffffff;
-    --color-background: #e0e8fd;
+    --color-primary: #075E54;         /* Encabezado y botones principales */
+    --color-secondary: #25D366;       /* Botón de acción (enviar, llamada) */
+    --color-text: #303030;            /* Texto principal */
+    --card: #FFFFFF;                  /* Fondo de burbujas recibidas y tarjetas */
+    --color-background: #E5DDD5;      /* Fondo general de la app */
 }
 
 [data-theme='dark'] {
-    --color-primary:#3b82f6;
-    --color-secondary: #8b5cf6;
-    --card: #1e293b;
-    --color-text: #f8fafc;
-    --color-background: #0f172a;
+    --color-primary: #1F2C34;         /* Encabezado y fondo superior */
+    --color-secondary: #25D366;       /* Botón de acción (enviar, llamada) */
+    --card: #202C33;                  /* Fondo de burbujas recibidas y tarjetas */
+    --color-text: #E9EDEF;            /* Texto principal */
+    --color-background: #121B22;      /* Fondo general de la app */
 }
 
 body{
     background-color: var(--color-background);
-    display: flex;
-    justify-content: center;
 }
 
 *{

@@ -1,57 +1,215 @@
-.message-info-box{
+/* Contenedor principal del mensaje */
+.chat-dialog {
     display: flex;
-    gap: 5px;
-    justify-content: space-between;
-    max-width: 150px;
-    align-items: center;
-    margin: 3px;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 8px 0;
+    max-width: 75%;
+    animation: slideInLeft 0.3s ease-out;
+}
+
+/* Mensajes propios (del usuario) */
+.chat-dialog__my-message {
     align-self: flex-end;
+    animation: slideInRight 0.3s ease-out;
 }
-.text-message{
-    color: var(--color-text);
+
+/* Burbuja del mensaje */
+.text-message {
     background-color: var(--card);
-    border-radius: 6px;
-    padding: 3px 5px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-}
-
-.date-time-message{
-    font-size: 0.8rem;
     color: var(--color-text);
-}
-.double-check_message{
-    color: var(--color-text);
-}
-.chat-dialog{
-    display: flex;
-    flex-direction: column;
-    align-self: start;
-    margin: 14px 6px 4px 20px;
-    max-width: calc(100% - 26px); /* Prevenir desbordamiento */
+    border-radius: 18px 18px 18px 4px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    line-height: 1.4;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.chat-dialog__my-message{
-    display: flex;
-    flex-direction: column;
-    align-self: end;
-    margin: 10px 20px 4px 4px;
-    max-width: min(300px, calc(100% - 24px)); /* Responsive y sin desbordamiento */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.button-delete-message{
+/* Estilo especial para mensajes propios */
+.chat-dialog__my-message .text-message {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    border-radius: 18px 18px 4px 18px;
     border: none;
-    background-color: #f8545465;
-    color: var(--color-text);
-    border-radius: 4px;
-    padding: 2px 4px;
-
+    box-shadow: 0 4px 12px var(--color-primary);
 }
-.button-delete-message:active{
-    background-color: #f85454a2;
+
+.text-message:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px var(--color-secondary);
+}
+
+.chat-dialog__my-message .text-message:hover {
+    box-shadow: 0 2px 6px var(--color-secondary);
+}
+
+/* Contenedor de información del mensaje */
+.message-info-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 0 8px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+/* Ajustar info para mensajes propios */
+.chat-dialog__my-message .message-info-box {
+    justify-content: flex-end;
+}
+
+/* Hora del mensaje */
+.date-time-message {
+    font-size: 0.75rem;
+    color: var(--color-text);
+    opacity: 0.9;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.chat-dialog__my-message .date-time-message {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Íconos de estado */
+.double-check_message {
+    color: var(--color-secondary);
+    font-size: 0.8rem;
+    margin-left: 2px;
+    transition: color 0.2s ease;
+}
+
+/* Mensajes propios - check en color diferente */
+.chat-dialog__my-message .double-check_message {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Botón de eliminar mensaje */
+.button-delete-message {
+    border: none;
+    background-color: rgba(248, 84, 84, 0.1);
+    color: #e53e3e;
+    border-radius: 12px;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(248, 84, 84, 0.2);
+}
+
+/* Mostrar botón al hacer hover sobre el mensaje */
+.chat-dialog:hover .button-delete-message {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.button-delete-message:hover {
+    background-color: rgba(248, 84, 84, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(248, 84, 84, 0.3);
+}
+
+.button-delete-message:active {
+    background-color: rgba(248, 84, 84, 0.3);
+    transform: scale(0.95);
+}
+
+/* Animaciones de entrada */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efecto de escritura para mensajes nuevos */
+.text-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* Estados de entrega y lectura */
+.message-status-sent .double-check_message {
+    color: var(--color-text);
+    opacity: 0.5;
+}
+
+.message-status-delivered .double-check_message {
+    color: var(--color-secondary);
+}
+
+.message-status-read .double-check_message {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media screen and (max-width: 400px) {
+    .chat-dialog {
+        max-width: 85%;
+        margin: 6px 0;
+    }
+    
+    .text-message {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        border-radius: 15px 15px 15px 3px;
+    }
+    
+    .chat-dialog__my-message .text-message {
+        border-radius: 15px 15px 3px 15px;
+    }
+    
+    .message-info-box {
+        gap: 6px;
+        padding: 0 6px;
+    }
+    
+    .date-time-message {
+        font-size: 0.7rem;
+        padding: 1px 4px;
+        color: var(--color-text);
+    }
+    
+    .button-delete-message {
+        padding: 3px 6px;
+        font-size: 0.65rem;
+    }
 }

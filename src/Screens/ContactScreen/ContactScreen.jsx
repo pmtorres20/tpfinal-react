@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { ContactContext } from '../../Context/ContactContext'
 import ContactsList from '../../Component/ContactList/ContactList'
 import './ContactScreen.css'
+import Header from '../../Component/Header/Header'
 
 export default function ContactScreen() {
     const {contacts} = useContext(ContactContext)
@@ -26,12 +27,7 @@ export default function ContactScreen() {
     return (
         <div className='contactScreen_page'>
             <div className='contactScreen_container'>
-                <div className='contactScreen_header'>
-                    <h1 className='contactScreen_title'>Mis Contactos</h1>
-                    <p className='contactScreen_subtitle'>
-                        {filteredContacts.length} de {contacts.length} contacto{contacts.length !== 1 ? 's' : ''}
-                    </p>
-                </div>
+                <Header/>
                 {/* Barra de búsqueda */}
                 <div className='search_container'>
                     <input
@@ -42,7 +38,9 @@ export default function ContactScreen() {
                         className='search_input'
                     />
                 </div>
-                
+                <p className='contactScreen_subtitle'>
+                        {filteredContacts.length} de {contacts.length} contacto{contacts.length !== 1 ? 's' : ''}
+                </p>
                 <ContactsList contacts={filteredContacts} />
             </div>
         </div>
