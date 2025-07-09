@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { ContactContext } from '../../Context/ContactContext'
 import ContactsList from '../../Component/ContactList/ContactList'
+import LoaderSpinner from '../../Component/LoaderSpinner/LoaderSpinner'
 import './ContactScreen.css'
 import Header from '../../Component/Header/Header'
 
 export default function ContactScreen() {
-    const {contacts} = useContext(ContactContext)
+    const { contacts, isLoadingContacts } = useContext(ContactContext)
     const [searchTerm, setSearchTerm] = useState('')
     
     // Filtrar contactos basado en el término de búsqueda
@@ -16,11 +17,21 @@ export default function ContactScreen() {
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value)
     }
-    // Si no hay contactos, mostrar un mensaje
+
+    // Mostrar loader mientras cargan los contactos
+    if (isLoadingContacts) {
+        return <LoaderSpinner />
+    }
+
+    // Si no hay contactos después de cargar, mostrar un mensaje
     if (contacts.length === 0) {   
         return (
             <div className='contactScreen_empty'>
-                <h2>No hay contactos disponibles</h2>
+                <Header title="Mis Contactos" />
+                <div className='no-contacts-message'>
+                    <h2>No hay contactos disponibles</h2>
+                    <p>Parece que aún no tienes contactos agregados.</p>
+                </div>
             </div>
         )
     }
