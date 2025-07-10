@@ -145,6 +145,9 @@
 }
 
 @media screen and (max-width: 420px) {
+    .header_center{
+        gap:1px;
+    }
     .header_container {
         padding: 12px 15px;
     }
@@ -154,11 +157,11 @@
     }
     
     .header_title {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
     
     .header_subtitle {
-        font-size: 0.85rem;
+        font-size: 0.6rem;
     }
     
     .header_actions .theme-btn {

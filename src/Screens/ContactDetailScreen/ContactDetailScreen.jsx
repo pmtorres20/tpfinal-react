@@ -35,7 +35,7 @@ export default function ContactDetailScreen() {
         <div className="contact-detail-container">
             <Header 
                 title={contact.name}
-                subtitle="Información del contacto"
+                subtitle="Detalles de contacto"
             />
             
             <div className="contact-detail-content">

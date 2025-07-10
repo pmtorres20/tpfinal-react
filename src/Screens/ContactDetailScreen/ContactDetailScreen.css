@@ -159,9 +159,6 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .contact-detail-container {
-        padding: 15px;
-    }
     
     .contact-profile {
         padding: 30px 20px;
@@ -191,9 +188,6 @@
 }
 
 @media screen and (max-width: 420px) {
-    .contact-detail-container {
-        padding: 10px;
-    }
     
     .nav-button {
         padding: 12px;
@@ -210,9 +204,6 @@
 }
 
 @media screen and (max-width: 320px) {
-    .contact-detail-container {
-        padding: 8px;
-    }
     
     .nav-button {
         padding: 10px;
