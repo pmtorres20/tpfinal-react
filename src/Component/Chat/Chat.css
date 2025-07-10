@@ -37,3 +37,9 @@
     }
     
 }
+
+.no-message_span{
+    color: var(--color-text);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}

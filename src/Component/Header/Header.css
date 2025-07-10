@@ -25,7 +25,9 @@
 .header_center {
     flex: 1;
     text-align: center;
+    align-items: center;
     display: flex;
+    gap: 20px;
     justify-content: center;
 }
 
@@ -64,7 +66,6 @@
 .header_subtitle {
     font-size: 1rem;
     opacity: 0.9;
-    margin: 8px 0 0 0;
     font-weight: 300;
 }
 

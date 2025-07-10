@@ -25,20 +25,22 @@ const MessagesContextProvider = ({ children }) => {
 
 
     const handleEliminarMensaje = (id_mensaje) => {
-        const listaMensajeActualizada = []
-        for (const mensaje of messages) {
-            if (mensaje.id !== id_mensaje) {
-                listaMensajeActualizada.push(mensaje)
-            }
-        }
+        // Usar filter para crear una nueva lista sin el mensaje a eliminar
+        const listaMensajeActualizada = messages.filter(mensaje => mensaje.id !== id_mensaje)
         setMessages(listaMensajeActualizada)
     }
+    
     const addNewMessage = (text) => {
-        //Esta funcion actualiza el estado de mensajes para agregar un nuevo mensaje
-        const new_message = { emisor: 'YO', hora: '23:13', texto: text, status: 'no-recibido', id: messages.length + 1 }
-        const clon_messages = [...messages]
-        clon_messages.push(new_message)
-        setMessages(clon_messages)
+        // Generar un ID único basado en timestamp para evitar duplicados
+        const new_id = Date.now()
+        const new_message = { 
+            emisor: 'YO', 
+            hora: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}), 
+            texto: text, 
+            status: 'no-recibido', 
+            id: new_id 
+        }
+        setMessages(prevMessages => [...prevMessages, new_message])
     }
 
     const loadMessages = (contact_id) => {

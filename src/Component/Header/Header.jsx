@@ -14,14 +14,13 @@ export default function Header({ title, subtitle, titleLink }) {
                 
                 <div className='header_center'>
                     {title && (
-                        titleLink ? (
-                            <Link to={titleLink} className='header_title_link'>
+                        titleLink ? 
+                            (<Link to={titleLink} className='header_title_link'>
                                 <h1 className='header_title'>{title}</h1>
-                            </Link>
-                        ) : (
-                            <h1 className='header_title'>{title}</h1>
-                        )
-                    )}
+                            </Link>) 
+                            : 
+                            (<h1 className='header_title'>{title}</h1>)
+                        )}
                     {subtitle && <p className='header_subtitle'>{subtitle}</p>}
                 </div>
                 

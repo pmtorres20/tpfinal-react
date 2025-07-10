@@ -42,7 +42,6 @@ export default function HomeScreen() {
     }
     //funcion que se encarga de buscar el nombre del contacto en la lista de contactos
     const nombre_contacto = getContactList().find(contact => contact.id === parseInt(contact_id)).name
-    console.log(nombre_contacto)
 
     return (
         <div className='chatScreen_page'>

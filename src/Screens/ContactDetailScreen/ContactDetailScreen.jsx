@@ -1,44 +1,54 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams, Link } from 'react-router'
-import { getContactList } from '../../services/contactService'
+import { ContactContext } from '../../Context/ContactContext'
+import ContactDetail from '../../Component/ContactDetail/ContactDetail'
+import Header from '../../Component/Header/Header'
+import LoaderSpinner from '../../Component/LoaderSpinner/LoaderSpinner'
 import './ContactDetailScreen.css'
 
 export default function ContactDetailScreen() {
     const { contact_id } = useParams()
+    const { contacts, isLoadingContacts } = useContext(ContactContext)
+    
+    if (isLoadingContacts) {
+        return <LoaderSpinner />
+    }
     
     // Buscar el contacto en la lista
-    const contact = getContactList().find(contact => contact.id === parseInt(contact_id))
+    const contact = contacts.find(contact => contact.id === parseInt(contact_id))
     
     // Si no se encuentra el contacto, mostrar error
     if (!contact) {
         return (
             <div className="contact-detail-error">
-                <h2>Contacto no encontrado</h2>
-                <Link to="/contacts">Volver a contactos</Link>
+                <Header title="Error" />
+                <div className="error-content">
+                    <h2>Contacto no encontrado</h2>
+                    <p>El contacto que buscas no existe o ha sido eliminado.</p>
+                    <Link to="/" className="error-button">Volver a contactos</Link>
+                </div>
             </div>
         )
     }
 
     return (
         <div className="contact-detail-container">
-            <div className="contact-detail-header">
-                <Link to={`/contacts/${contact_id}/messages`} className="back-button">
-                    ← Volver al chat
-                </Link>
-            </div>
+            <Header 
+                title={contact.name}
+                subtitle="Información del contacto"
+            />
             
             <div className="contact-detail-content">
-                <div className="contact-profile">
-                    <img 
-                        src={contact.img} 
-                        alt={contact.name}
-                        className="contact-profile-img"
-                    />
-                    <h1 className="contact-name">{contact.name}</h1>
-                    <p className="contact-last-connection">
-                        Última conexión: {contact.last_time_connected}
-                    </p>
+                <div className="contact-detail-navigation">
+                    <Link to={`/contacts/${contact_id}/messages`} className="nav-button">
+                        ← Volver al chat
+                    </Link>
+                    <Link to="/" className="nav-button">
+                        Ver todos los contactos
+                    </Link>
                 </div>
+                
+                <ContactDetail contactId={contact_id} />
             </div>
         </div>
     )

@@ -7,6 +7,10 @@
     margin-top: 10px;
     width: 100%;
     background-color: var(--card);
+    scroll-behavior: smooth;
+    /* para generar scroll: */
+    max-height: calc(100vh - 200px); /* Ajusta según el espacio disponible */
+    overflow-y: auto;
 }
 
 /* Separador sutil entre contactos */

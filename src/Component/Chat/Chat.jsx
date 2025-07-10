@@ -23,7 +23,7 @@ export default function Chat() {
     if(messages.length === 0){
         return (
             <div className='chat-container' ref={chatContainerRef}>
-                <span>No hay mensajes!</span>
+                <span className='no-message_span'>No hay mensajes!</span>
             </div>
         )
     }
